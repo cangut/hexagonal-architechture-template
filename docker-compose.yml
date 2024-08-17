@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_product
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: productdb
+      POSTGRES_USER: can
+      POSTGRES_PASSWORD: can
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:

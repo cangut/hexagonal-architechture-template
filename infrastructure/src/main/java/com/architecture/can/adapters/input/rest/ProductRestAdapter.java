@@ -38,6 +38,7 @@ public class ProductRestAdapter {
     public ResponseEntity<UUID> save(@RequestBody ProductCreateRequest request) {
         ProductCommand.Create createCommand = ProductCommand.Create.builder()
                 .categoryId(request.getCategoryId())
+                .sellerId(request.getSellerId())
                 .brand(request.getBrand())
                 .productState(request.getProductState())
                 .build();

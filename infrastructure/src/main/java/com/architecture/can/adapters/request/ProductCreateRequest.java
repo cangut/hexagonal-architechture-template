@@ -8,6 +8,7 @@ import java.util.UUID;
 @Data
 public class ProductCreateRequest {
     private UUID categoryId;
+    private UUID sellerId;
     private String brand;
     private ProductState productState;
 }

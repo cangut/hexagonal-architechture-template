@@ -6,6 +6,7 @@ import com.architecture.can.valueobject.Brand;
 import com.architecture.can.valueobject.CategoryId;
 import com.architecture.can.valueobject.ProductId;
 import com.architecture.can.valueobject.ProductState;
+import com.architecture.can.valueobject.SellerId;
 import lombok.Getter;
 
 import java.util.UUID;
@@ -14,12 +15,14 @@ import java.util.UUID;
 public class Product {
     private ProductId productId;
     private CategoryId categoryId;
+    private SellerId sellerId;
     private Brand brand;
     private ProductState productState;
 
     public Product(ProductJpaEntity entity) {
         this.productId = new ProductId(entity.getId());
         this.categoryId = new CategoryId(entity.getCategoryId());
+        this.sellerId = new SellerId(entity.getSellerId());
         this.brand = new Brand(entity.getBrand());
         this.productState = entity.getProductState();
     }
@@ -27,6 +30,7 @@ public class Product {
     public Product(ProductCommand.Create command) {
         this.productId = new ProductId(UUID.randomUUID());
         this.categoryId = new CategoryId(command.categoryId());
+        this.sellerId = new SellerId(command.sellerId());
         this.brand = new Brand(command.brand());
         this.productState = command.productState();
     }

@@ -8,7 +8,7 @@ import java.util.UUID;
 public interface ProductCommand {
 
     @Builder
-    record Create(UUID categoryId, UUID sellerId, String brand, ProductState productState) implements ProductCommand{}
+    record Create(UUID categoryId, UUID sellerId, String brand, String title, ProductState productState) implements ProductCommand{}
 
     @Builder
     record UpdateState(ProductState productState) implements ProductCommand{};

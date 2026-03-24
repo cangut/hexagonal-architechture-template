@@ -10,5 +10,6 @@ public class ProductCreateRequest {
     private UUID categoryId;
     private UUID sellerId;
     private String brand;
+    private String title;
     private ProductState productState;
 }

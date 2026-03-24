@@ -40,6 +40,7 @@ public class ProductRestAdapter {
                 .categoryId(request.getCategoryId())
                 .sellerId(request.getSellerId())
                 .brand(request.getBrand())
+                .title(request.getTitle())
                 .productState(request.getProductState())
                 .build();
         return new ResponseEntity<>(productUseCase.save(createCommand), HttpStatus.OK);

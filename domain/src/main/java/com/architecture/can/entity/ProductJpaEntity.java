@@ -20,6 +20,7 @@ public class ProductJpaEntity {
     private UUID categoryId;
     private UUID sellerId;
     private String brand;
+    private String title;
     private ProductState productState;
 
     public ProductJpaEntity(Product product) {
@@ -27,6 +28,7 @@ public class ProductJpaEntity {
         this.categoryId = product.getCategoryId().getValue();
         this.sellerId = product.getSellerId().getValue();
         this.brand = product.getBrand().value();
+        this.title = product.getTitle().value();
         this.productState = product.getProductState();
     }
 
